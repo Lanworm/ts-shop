@@ -1,0 +1,28 @@
+[
+    {
+        "name": "Samsung Galaxy S8",
+        "price": 1500,
+        "weight": 200,
+        "inStock": 20,
+        "category": "Device"
+    },
+    {
+        "name": "Samsung Galaxy S8+",
+        "price": 2000,
+        "weight": 150,
+        "inStock": 12,
+        "category": "Device"
+    },
+    {
+        "name": "iPhone X",
+        "price": 3000,
+        "weight": 150,
+        "inStock": 8,
+        "category": "Device"
+    },
+    {
+        "name": "Vodafone RED Extra XS",
+        "price": 100,
+        "category": "Service"
+    }
+]

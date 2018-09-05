@@ -1,0 +1,27 @@
+<div>
+  <div class="ts-shop-filters">
+    <input type="text" placeholder="Name" [(ngModel)]="filters.name" (ngModelChange)="filterProducts()">
+  </div>
+  <table class="ts-shop-base-table ts-shop-products-table">
+    <thead class="ts-shop-base-table-header">
+      <tr>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Weight</th>
+        <th>In stock</th>
+        <th>Category</th>
+        <th>Volume</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let product of (products | tsShopFilter : filters)">
+        <td>{{product.name}}</td>
+        <td>{{product.price | currency : '€'}}</td>
+        <td>{{product.weight}}</td>
+        <td>{{product.inStock}}</td>
+        <td>{{product.category}}</td>
+        <td>{{product.volume}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

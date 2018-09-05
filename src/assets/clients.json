@@ -1,0 +1,26 @@
+[
+    {
+        "name": "John",
+        "surname": "Smith",
+        "birthdate": "1972.11.17",
+        "email": "john.smith@gmail.com"
+    },
+    {
+        "name": "Lukasz",
+        "surname": "Novak",
+        "birthdate": "1984.06.14",
+        "email": "novak1984@rambler.com"
+    },
+    {
+        "name": "Christoph",
+        "surname": "Mueller",
+        "birthdate": "1959.01.12",
+        "email": "cmueller@gmail.com"
+    },
+    {
+        "name": "Alexander",
+        "surname": "Ivanov",
+        "birthdate": "1991.07.22",
+        "email": "alexivanov1991@mail.ru"
+    }
+]

@@ -1,0 +1,29 @@
+.ts-shop-nav-bar {
+    width: 100%;
+    box-shadow: 0 2px 1px 0 rgba(0,0,0,.15);
+}
+
+.ts-shop-header {
+    margin: 0 0 5px 0;
+}
+
+.ts-shop-header-title {
+    text-transform: uppercase;
+    background-color: #e20074;
+    color: #fff;
+    padding: 14px 20px;
+}
+
+.ts-shop-nav-bar a {
+    padding: 14px 20px;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 2px;
+    text-decoration: none;
+    color: #000000;
+}
+
+.ts-shop-nav-bar a:hover {
+    color: #e20074;
+    background-color: #f1efef;
+}
