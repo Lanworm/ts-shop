@@ -10,20 +10,28 @@ import { ClientService } from './client.service';
 export class ClientsComponent implements OnInit {
 
   private _clients: Client[];
+  private _isLoading: boolean = false;
 
   constructor(private clientService: ClientService) { }
+
+  get isLoading(): boolean {
+    return this._isLoading;
+  }
 
   ngOnInit() {
     this.getClients();
   }
 
   private getClients(): void {
+    this._isLoading = true;
     this.clientService.getClients().subscribe(
       (clients: Client[]) => {
         this._clients = clients;
+        this._isLoading = false;
       },
       (error) => {
         console.log(error);
+        this._isLoading = false;
       }
     )
   }

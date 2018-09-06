@@ -1,4 +1,5 @@
-<div>
+<div *ngIf="isLoading">Loading...</div>
+<div [ngClass]="{ 'ts-shop-hidden': isLoading }">
   <table class="ts-shop-base-table ts-shop-clients-table">
     <thead class="ts-shop-base-table-header">
       <tr>
@@ -12,7 +13,7 @@
       <tr *ngFor="let client of clients">
         <td>{{client.name}}</td>
         <td>{{client.surname}}</td>
-        <td>{{client.birthdate}}</td>
+        <td>{{client.birthdate | date : "MM/dd/yyyy" }}</td>
         <td>{{client.email}}</td>
       </tr>
     </tbody>

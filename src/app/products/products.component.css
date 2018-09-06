@@ -5,3 +5,38 @@
 .ts-shop-filters {
     margin: 5px 0;
 }
+
+.ts-shop-filters input {
+    margin: 0 5px 0 0;
+}
+
+.ts-shop-btn-remove {
+    background-color: #e20074;
+    margin: 0 0 0 4px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 1.42857143;
+    font-weight: bold;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+    transition-duration: 0.25s;
+    -webkit-transition-duration: 0.25s;
+  }
+  
+.ts-shop-btn-remove:hover {
+    background-color: #fcfcfc;
+    color: #e20074;
+    border: 1px solid #e20074;
+    cursor: pointer;
+    outline: none;
+}
+
+.ts-shop-btn-remove:disabled {
+    background-color: #cccccc;
+    color: #666666;
+    border: 1px solid #999999;
+    cursor: default;
+}

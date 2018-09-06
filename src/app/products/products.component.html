@@ -1,6 +1,9 @@
-<div>
+<div *ngIf="isLoading">Loading...</div>
+<div [ngClass]="{ 'ts-shop-hidden': isLoading }">
   <div class="ts-shop-filters">
     <input type="text" placeholder="Name" [(ngModel)]="filters.name" (ngModelChange)="filterProducts()">
+    <input type="text" placeholder="Price" [(ngModel)]="filters.price" (ngModelChange)="filterProducts()">
+    <button type="button" class="ts-shop-btn-remove" [disabled]="isFiltersEmpty()" (click)="clearFilters()">&times;</button>
   </div>
   <table class="ts-shop-base-table ts-shop-products-table">
     <thead class="ts-shop-base-table-header">
@@ -14,7 +17,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let product of (products | tsShopFilter : filters)">
+      <tr *ngFor="let product of (products | tsShopFilter : filters)" [ngStyle]="setAvailabilityColour(product)">
         <td>{{product.name}}</td>
         <td>{{product.price | currency : '€'}}</td>
         <td>{{product.weight}}</td>

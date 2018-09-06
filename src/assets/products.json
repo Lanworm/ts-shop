@@ -1,28 +1,104 @@
 [
     {
-        "name": "Samsung Galaxy S8",
-        "price": 1500,
+        "name": "Samsung Galaxy Note9",
+        "price": 999,
         "weight": 200,
         "inStock": 20,
         "category": "Device"
     },
     {
-        "name": "Samsung Galaxy S8+",
-        "price": 2000,
+        "name": "Apple iPhone 8 Plus",
+        "price": 799,
         "weight": 150,
         "inStock": 12,
         "category": "Device"
     },
     {
-        "name": "iPhone X",
-        "price": 3000,
+        "name": "Apple iPhone 8",
+        "price": 699,
         "weight": 150,
         "inStock": 8,
         "category": "Device"
     },
     {
+        "name": "Apple iPhone X",
+        "price": 999,
+        "weight": 150,
+        "inStock": 8,
+        "category": "Device"
+    },
+    {
+        "name": "Google Pixel 2",
+        "price": 799,
+        "weight": 150,
+        "inStock": 8,
+        "category": "Device"
+    },
+    {
+        "name": "Samsung Galaxy S9",
+        "price": 720,
+        "weight": 150,
+        "inStock": 0,
+        "category": "Device"
+    },
+    {
         "name": "Vodafone RED Extra XS",
         "price": 100,
+        "category": "Service"
+    },
+    {
+        "name": "Vodafone Red S",
+        "price": 24.99,
+        "category": "Service"
+    },
+    {
+        "name": "Vodafone Red M",
+        "price": 29.99,
+        "category": "Service"
+    },
+    {
+        "name": "Vodafone Red M",
+        "price": 34.99,
+        "category": "Service"
+    },
+    {
+        "name": "MagentaMobil XS",
+        "price": 19.95,
+        "category": "Service"
+    },
+    {
+        "name": "MagentaMobil S",
+        "price": 24.95,
+        "category": "Service"
+    },
+    {
+        "name": "MagentaMobil M",
+        "price": 29.95,
+        "category": "Service"
+    },
+    {
+        "name": "MagentaMobil L",
+        "price": 29.95,
+        "category": "Service"
+    },
+    {
+        "name": "MagentaMobil XL",
+        "price": 79.95,
+        "category": "Service"
+    },
+    {
+        "name": "Data Comfort S",
+        "price": 13.45,
+        "category": "Service"
+    },
+    {
+        "name": "Data Comfort M Eco",
+        "price": 17.95,
+        "category": "Service"
+    },
+    {
+        "name": "Data Comfort L Eco",
+        "price": 26.95,
         "category": "Service"
     }
 ]

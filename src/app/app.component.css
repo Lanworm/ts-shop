@@ -27,3 +27,7 @@
     color: #e20074;
     background-color: #f1efef;
 }
+
+.ts-shop-nav-bar-active {
+    background-color: #f1efef;
+}

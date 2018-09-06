@@ -12,9 +12,19 @@
 
 .ts-shop-base-table td, th {
     padding: 4px;
+    border: 1px solid;
+    border-color: rgb(227, 228, 230);
+}
+
+.ts-shop-base-table tbody tr:hover {
+    background-color: #f1efef !important;
 }
 
 body {
     font-size: 15px;
     font-family: Arial,Helvetica Neue,Helvetica,sans-serif; 
+}
+
+.ts-shop-hidden {
+    display: none;
 }
