@@ -1,4 +1,7 @@
-<div *ngIf="isLoading">Loading...</div>
+<div *ngIf="isLoading" class="ts-shop-loading">
+  <div class="ts-shop-loading-indicator"></div>
+  <div>Loading</div>
+</div>
 <div [ngClass]="{ 'ts-shop-hidden': isLoading }">
   <div class="ts-shop-filters">
     <input type="text" placeholder="Name" [(ngModel)]="filters.name" (ngModelChange)="filterProducts()">

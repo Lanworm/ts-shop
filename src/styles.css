@@ -28,3 +28,38 @@ body {
 .ts-shop-hidden {
     display: none;
 }
+
+.ts-shop-loading {
+    text-align: center;
+    font-size: 20px;
+
+    /* Center loading indicator on a page  */
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    /***************************************/
+}
+  
+.ts-shop-loading div {
+    margin: 0 auto;
+}
+
+.ts-shop-loading-indicator {
+    border: 5px solid #f3f3f3;
+    -webkit-animation: spin 1s linear infinite;
+    animation: spin 1.5s linear infinite;
+    border-top: 5px solid #e20074;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
