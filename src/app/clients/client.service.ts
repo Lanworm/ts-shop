@@ -12,8 +12,8 @@ export class ClientService {
   constructor(private http: HttpClient) { }
 
   public getClients(): Observable<Client[]> {
-    //return this.http.get<Client[]>('../../assets/clients.json').pipe(delay(1000));
-    return this.http.get<Client[]>('/tshop/api/clients');
+    // return this.http.get<Client[]>('../../assets/clients.json').pipe(delay(1000));
+    return this.http.get<Client[]>('/api/clients');
   }
 
 }

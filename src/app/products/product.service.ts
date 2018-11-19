@@ -13,7 +13,7 @@ export class ProductService {
 
   public getProducts(): Observable<Product[]> {
     // return this.http.get<Product[]>('../../assets/products.json').pipe(delay(1000));
-    return this.http.get<Product[]>('/tshop/api/products');
+    return this.http.get<Product[]>('/api/products');
   }
 
 }

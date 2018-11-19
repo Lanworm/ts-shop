@@ -4,8 +4,10 @@ const PROXY_CONFIG = [
       context: [
           "/assets/clients.json",
           "/assets/products.json",
-          "/tshop/api/clients",
-          "/tshop/api/products",
+          "/api/clients",
+          "/api/products",
+          "/api/user",
+          "/api/logout"
       ],
       target: "http://localhost:8080",
       secure: false,
