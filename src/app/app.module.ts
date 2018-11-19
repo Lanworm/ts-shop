@@ -7,9 +7,10 @@ import { AppComponent } from './app.component';
 import { ProductsComponent } from './products/products.component';
 import { ClientsComponent } from './clients/clients.component';
 import { TsShopFilterPipe } from './pipes/ts-shop-filter.pipe';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import {AuthGuard} from './auth.guard';
+import {ErrorInterceptor} from './error-interceptor';
 
 const appRoutes: Routes = [
   { path: 'clients', component: ClientsComponent, canActivate: [AuthGuard] },
@@ -39,7 +40,9 @@ const appRoutes: Routes = [
     FormsModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
