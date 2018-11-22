@@ -11,6 +11,9 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { LoginComponent } from './login/login.component';
 import {AuthGuard} from './auth.guard';
 import {ErrorInterceptor} from './error-interceptor';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatDialogModule, MatListModule} from '@angular/material';
+import { ClientDetailsComponent } from './client-details/client-details.component';
 
 const appRoutes: Routes = [
   { path: 'clients', component: ClientsComponent, canActivate: [AuthGuard] },
@@ -28,9 +31,14 @@ const appRoutes: Routes = [
     ProductsComponent,
     ClientsComponent,
     TsShopFilterPipe,
-    LoginComponent
+    LoginComponent,
+    ClientDetailsComponent
   ],
   imports: [
+    MatListModule,
+    MatDialogModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
     ReactiveFormsModule,
     RouterModule.forRoot(
       appRoutes,
@@ -39,6 +47,9 @@ const appRoutes: Routes = [
     BrowserModule,
     FormsModule,
     HttpClientModule
+  ],
+  entryComponents: [
+    ClientDetailsComponent
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true }

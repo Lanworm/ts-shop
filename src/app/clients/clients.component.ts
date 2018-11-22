@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Client } from './client.model';
 import { ClientService } from './client.service';
+import {ClientDetailsComponent} from '../client-details/client-details.component';
+import {MatDialog} from '@angular/material';
 
 @Component({
   selector: 'app-clients',
@@ -12,7 +14,8 @@ export class ClientsComponent implements OnInit {
   private _clients: Client[];
   private _isLoading: boolean = false;
 
-  constructor(private clientService: ClientService) { }
+  constructor(private clientService: ClientService,
+              private dialog: MatDialog) { }
 
   get isLoading(): boolean {
     return this._isLoading;
@@ -38,6 +41,14 @@ export class ClientsComponent implements OnInit {
 
   get clients(): Client[] {
     return this._clients;
+  }
+
+  public showClientDetails(client: Client): void {
+    const dialogRef = this.dialog.open(ClientDetailsComponent, {
+      data: client,
+      height: '500px',
+      width: '600px',
+    });
   }
 
 }

@@ -1,0 +1,24 @@
+<h1 mat-dialog-title>Client details</h1>
+<mat-dialog-content>
+  <mat-list>
+    <mat-list-item>
+      <h1 mat-line>Name</h1>
+      <p mat-line>{{client.name}}</p>
+    </mat-list-item>
+    <mat-list-item>
+      <h1 mat-line>Surname</h1>
+      <p mat-line>{{client.surname}}</p>
+    </mat-list-item>
+    <mat-list-item>
+      <h1 mat-line>Email</h1>
+      <p mat-line>{{client.email}}</p>
+    </mat-list-item>
+    <mat-list-item>
+      <h1 mat-line>Birthdate</h1>
+      <p mat-line>{{client.birthdate | date : 'dd/MM/yyyy'}}</p>
+    </mat-list-item>
+  </mat-list>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close>Close</button>
+</mat-dialog-actions>
