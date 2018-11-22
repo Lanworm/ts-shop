@@ -1,9 +1,9 @@
-export class Client {
+export interface Client {
 
-    constructor(public name: string,
-    public surname: string,
-    public birthdate: Date,
-    public email: string,
-    public password: string) {}
+  name: string;
+  surname: string;
+  birthdate: Date;
+  email: string;
+  password: string;
 
 }
