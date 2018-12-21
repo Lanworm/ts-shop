@@ -12,7 +12,15 @@ import { LoginComponent } from './login/login.component';
 import {AuthGuard} from './auth.guard';
 import {ErrorInterceptor} from './error-interceptor';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatDialogModule, MatIconModule, MatInputModule, MatListModule, MatToolbarModule} from '@angular/material';
+import {
+  MatButtonModule,
+  MatDialogModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule, MatSortModule,
+  MatTableModule,
+  MatToolbarModule
+} from '@angular/material';
 import { ClientDetailsComponent } from './client-details/client-details.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 
@@ -42,6 +50,8 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatInputModule,
     MatIconModule,
+    MatTableModule,
+    MatSortModule,
     MatButtonModule,
     FlexLayoutModule,
     ReactiveFormsModule,

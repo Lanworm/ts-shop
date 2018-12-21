@@ -1,7 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { Product } from './product.model';
 import { ProductService } from './product.service';
 import { ProductCategory } from './product-category.enum';
+import {MatSort, MatTableDataSource} from '@angular/material';
+import {TsShopFilterPipe} from '../pipes/ts-shop-filter.pipe';
 
 @Component({
   selector: 'ts-shop-products',
@@ -13,6 +15,12 @@ export class ProductsComponent implements OnInit {
   private _products: Product[];
   private _filters: any = {};
   private _isLoading: boolean = false;
+
+  displayedColumns: string[] = ['name', 'price', 'weight', 'inStock', 'category', 'volume'];
+
+  @ViewChild(MatSort) sort: MatSort;
+
+  dataSource: MatTableDataSource;
 
   constructor(private productService: ProductService) { }
 
@@ -36,6 +44,8 @@ export class ProductsComponent implements OnInit {
     this._isLoading = true;
     this.productService.getProducts().subscribe((products: Product[]) => {
       this._products = products;
+      this.dataSource = new MatTableDataSource(this._products);
+      this.dataSource.sort = this.sort;
       this._isLoading = false;
     },
     (error) => {
@@ -46,6 +56,8 @@ export class ProductsComponent implements OnInit {
 
   public filterProducts(): void {
     this._filters = { ... this.filters};
+    this.dataSource = new MatTableDataSource(new TsShopFilterPipe().transform(this._products, this.filters));
+    this.dataSource.sort = this.sort;
   }
 
   public isFiltersEmpty(): boolean {

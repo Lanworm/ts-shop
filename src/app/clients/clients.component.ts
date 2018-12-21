@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import { Client } from './client.model';
 import { ClientService } from './client.service';
 import {ClientDetailsComponent} from '../client-details/client-details.component';
-import {MatDialog} from '@angular/material';
+import {MatDialog, MatSort, MatTableDataSource} from '@angular/material';
 
 @Component({
   selector: 'app-clients',
@@ -13,6 +13,12 @@ export class ClientsComponent implements OnInit {
 
   private _clients: Client[];
   private _isLoading: boolean = false;
+
+  dataSource: MatTableDataSource;
+
+  displayedColumns: string[] = ['name', 'surname', 'birthdate', 'email'];
+
+  @ViewChild(MatSort) sort: MatSort;
 
   constructor(private clientService: ClientService,
               private dialog: MatDialog) { }
@@ -30,6 +36,8 @@ export class ClientsComponent implements OnInit {
     this.clientService.getClients().subscribe(
       (clients: Client[]) => {
         this._clients = clients;
+        this.dataSource = new MatTableDataSource(this._clients);
+        this.dataSource.sort = this.sort;
         this._isLoading = false;
       },
       (error) => {
