@@ -15,4 +15,8 @@ export class AppComponent {
     this.authenticationService.logout();
   }
 
+  public isAuthenticated(): boolean {
+    return !!this.authenticationService.getCurrentUser();
+  }
+
 }

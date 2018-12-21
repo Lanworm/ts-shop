@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient,
+              private router: Router) { }
 
 
   public login(username: string, password: string): Observable<any> {
@@ -27,11 +29,16 @@ export class AuthenticationService {
     this.http.post<any>('/api/logout', '').subscribe(
       (response: any) => {
         localStorage.removeItem('currentUser');
+        this.router.navigate(['/login']);
       },
       (error: any) => {
         console.log(error);
       }
     );
+  }
+
+  public getCurrentUser(): any {
+    return localStorage.getItem('currentUser');
   }
 
 }

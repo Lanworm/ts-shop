@@ -3,7 +3,7 @@
     {{ title }}
     <button style="float: right;" (click)="logout()">logout</button>
   </div>
-  <div class="ts-shop-nav-bar">
+  <div *ngIf="isAuthenticated()" class="ts-shop-nav-bar">
     <a routerLink="/clients" routerLinkActive="ts-shop-nav-bar-active">Clients</a>
     <a routerLink="/products" routerLinkActive="ts-shop-nav-bar-active">Products</a>
     <a routerLink="/orders" routerLinkActive="ts-shop-nav-bar-active">Orders</a>
