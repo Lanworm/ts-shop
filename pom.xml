@@ -1,0 +1,46 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.tsystems</groupId>
+  <artifactId>tshop-ui</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
+  
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+  <build>
+	  <plugins>
+		<plugin>
+			<groupId>org.apache.maven.plugins</groupId>
+			<artifactId>maven-resources-plugin</artifactId>
+			<version>3.1.0</version>
+			<executions>
+			  <execution>
+				<id>copy-dist</id>
+				<phase>process-resources</phase>
+				<goals>
+				  <goal>copy-resources</goal>
+				</goals>
+				<configuration>
+				  <outputDirectory>
+					${project.build.outputDirectory}/META-INF/resources/webjars/${project.artifactId}/${project.version}
+				  </outputDirectory>
+				  <resources>
+					<resource>
+					  <directory>${basedir}/dist/ts-shop</directory>
+					  <filtering>false</filtering>
+					</resource>
+				  </resources>
+				</configuration>
+			  </execution>
+			</executions>
+		  </plugin>
+	  </plugins>
+  </build>
+  
+</project>
