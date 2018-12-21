@@ -13,7 +13,7 @@ import {AuthGuard} from './auth.guard';
 import {ErrorInterceptor} from './error-interceptor';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  MatButtonModule,
+  MatButtonModule, MatDatepickerModule,
   MatDialogModule,
   MatIconModule,
   MatInputModule,
@@ -24,6 +24,7 @@ import {
 import { ClientDetailsComponent } from './client-details/client-details.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
 import { AddClientComponent } from './add-client/add-client.component';
+import {MatMomentDateModule} from '@angular/material-moment-adapter';
 
 const appRoutes: Routes = [
   { path: 'clients', component: ClientsComponent, canActivate: [AuthGuard] },
@@ -58,6 +59,8 @@ const appRoutes: Routes = [
     MatPaginatorModule,
     MatButtonModule,
     FlexLayoutModule,
+    MatDatepickerModule,
+    MatMomentDateModule,
     ReactiveFormsModule,
     RouterModule.forRoot(
       appRoutes,

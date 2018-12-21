@@ -21,7 +21,7 @@ export class AddClientComponent implements OnInit {
     this.clientForm = this.formBuilder.group({
       name: ['', Validators.required],
       surname: ['', Validators.required],
-      birthdate: ['', []],
+      birthdate: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]]
     });
   }

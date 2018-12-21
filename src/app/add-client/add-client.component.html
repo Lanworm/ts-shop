@@ -1,19 +1,31 @@
 <h1 mat-dialog-title>Add client</h1>
 
+<div class="add-client-form-container">
 <form [formGroup]="clientForm" (ngSubmit)="onSubmit()" fxLayout="column">
 
   <mat-form-field>
     <input matInput placeholder="name" type="text" formControlName="name" />
+    <mat-error *ngIf="clientForm.controls.name.hasError('required')">
+      Name is <strong>required</strong>
+    </mat-error>
   </mat-form-field>
 
 
   <mat-form-field>
     <input matInput placeholder="surname" type="text" formControlName="surname" />
+    <mat-error *ngIf="clientForm.controls.surname.hasError('required')">
+      Surname is <strong>required</strong>
+    </mat-error>
   </mat-form-field>
 
 
   <mat-form-field>
-    <input matInput placeholder="birthdate" type="text" formControlName="birthdate" />
+    <input matInput placeholder="birthdate" [matDatepicker]="myDatepicker" type="text" formControlName="birthdate" />
+    <mat-datepicker-toggle matSuffix [for]="myDatepicker"></mat-datepicker-toggle>
+    <mat-datepicker #myDatepicker></mat-datepicker>
+    <mat-error *ngIf="clientForm.controls.birthdate.hasError('required')">
+      Birthdate is <strong>required</strong>
+    </mat-error>
   </mat-form-field>
 
   <mat-form-field>
@@ -33,3 +45,4 @@
   </div>
 
 </form>
+</div>
