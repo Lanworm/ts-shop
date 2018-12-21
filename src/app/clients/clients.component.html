@@ -33,4 +33,6 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;" (click)="showClientDetails(row)"></tr>
   </table>
 
+  <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons></mat-paginator>
+
 </div>

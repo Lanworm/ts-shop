@@ -17,7 +17,7 @@ import {
   MatDialogModule,
   MatIconModule,
   MatInputModule,
-  MatListModule, MatSortModule,
+  MatListModule, MatPaginatorModule, MatSortModule,
   MatTableModule,
   MatToolbarModule
 } from '@angular/material';
@@ -55,6 +55,7 @@ const appRoutes: Routes = [
     MatIconModule,
     MatTableModule,
     MatSortModule,
+    MatPaginatorModule,
     MatButtonModule,
     FlexLayoutModule,
     ReactiveFormsModule,

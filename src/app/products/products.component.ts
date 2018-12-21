@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import { Product } from './product.model';
 import { ProductService } from './product.service';
 import { ProductCategory } from './product-category.enum';
-import {MatSort, MatTableDataSource} from '@angular/material';
+import {MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {TsShopFilterPipe} from '../pipes/ts-shop-filter.pipe';
 
 @Component({
@@ -19,6 +19,7 @@ export class ProductsComponent implements OnInit {
   displayedColumns: string[] = ['name', 'price', 'weight', 'inStock', 'category', 'volume'];
 
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   dataSource: MatTableDataSource;
 
@@ -46,6 +47,7 @@ export class ProductsComponent implements OnInit {
       this._products = products;
       this.dataSource = new MatTableDataSource(this._products);
       this.dataSource.sort = this.sort;
+      this.dataSource.paginator = this.paginator;
       this._isLoading = false;
     },
     (error) => {
@@ -58,6 +60,7 @@ export class ProductsComponent implements OnInit {
     this._filters = { ... this.filters};
     this.dataSource = new MatTableDataSource(new TsShopFilterPipe().transform(this._products, this.filters));
     this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
   }
 
   public isFiltersEmpty(): boolean {

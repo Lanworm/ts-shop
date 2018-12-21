@@ -2,7 +2,7 @@ import {Component, OnInit, ViewChild} from '@angular/core';
 import { Client } from './client.model';
 import { ClientService } from './client.service';
 import {ClientDetailsComponent} from '../client-details/client-details.component';
-import {MatDialog, MatSort, MatTableDataSource} from '@angular/material';
+import {MatDialog, MatPaginator, MatSort, MatTableDataSource} from '@angular/material';
 import {Router} from '@angular/router';
 
 @Component({
@@ -20,6 +20,7 @@ export class ClientsComponent implements OnInit {
   displayedColumns: string[] = ['name', 'surname', 'birthdate', 'email'];
 
   @ViewChild(MatSort) sort: MatSort;
+  @ViewChild(MatPaginator) paginator: MatPaginator;
 
   constructor(private clientService: ClientService,
               private dialog: MatDialog,
@@ -40,6 +41,7 @@ export class ClientsComponent implements OnInit {
         this._clients = clients;
         this.dataSource = new MatTableDataSource(this._clients);
         this.dataSource.sort = this.sort;
+        this.dataSource.paginator = this.paginator;
         this._isLoading = false;
       },
       (error) => {
