@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>Add client</h1>
+
+<form [formGroup]="clientForm" (ngSubmit)="onSubmit()" fxLayout="column">
+
+  <mat-form-field>
+    <input matInput placeholder="name" type="text" formControlName="name" />
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <input matInput placeholder="surname" type="text" formControlName="surname" />
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <input matInput placeholder="birthdate" type="text" formControlName="birthdate" />
+  </mat-form-field>
+
+  <mat-form-field>
+    <input matInput placeholder="email" type="email" formControlName="email" />
+    <mat-error *ngIf="clientForm.controls.email.hasError('email') && !clientForm.controls.email.hasError('required')">
+      Please enter a valid email address
+    </mat-error>
+    <mat-error *ngIf="clientForm.controls.email.hasError('required')">
+      Email is <strong>required</strong>
+    </mat-error>
+  </mat-form-field>
+
+  <div>
+    <button mat-button mat-raised-button [disabled]="!clientForm.valid" type="submit">
+      Create
+    </button>
+  </div>
+
+</form>

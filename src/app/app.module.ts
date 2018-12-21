@@ -23,11 +23,13 @@ import {
 } from '@angular/material';
 import { ClientDetailsComponent } from './client-details/client-details.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { AddClientComponent } from './add-client/add-client.component';
 
 const appRoutes: Routes = [
   { path: 'clients', component: ClientsComponent, canActivate: [AuthGuard] },
   { path: 'products', component: ProductsComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginComponent },
+  { path: 'add-client', component: AddClientComponent, canActivate: [AuthGuard] },
   { path: '',
     redirectTo: '/products',
     pathMatch: 'full'
@@ -41,7 +43,8 @@ const appRoutes: Routes = [
     ClientsComponent,
     TsShopFilterPipe,
     LoginComponent,
-    ClientDetailsComponent
+    ClientDetailsComponent,
+    AddClientComponent
   ],
   imports: [
     MatListModule,

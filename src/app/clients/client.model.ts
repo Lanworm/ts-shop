@@ -4,6 +4,6 @@ export interface Client {
   surname: string;
   birthdate: Date;
   email: string;
-  password: string;
+  password?: string;
 
 }

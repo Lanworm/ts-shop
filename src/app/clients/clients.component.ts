@@ -3,6 +3,7 @@ import { Client } from './client.model';
 import { ClientService } from './client.service';
 import {ClientDetailsComponent} from '../client-details/client-details.component';
 import {MatDialog, MatSort, MatTableDataSource} from '@angular/material';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-clients',
@@ -21,7 +22,8 @@ export class ClientsComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
 
   constructor(private clientService: ClientService,
-              private dialog: MatDialog) { }
+              private dialog: MatDialog,
+              private router: Router) { }
 
   get isLoading(): boolean {
     return this._isLoading;
@@ -44,7 +46,7 @@ export class ClientsComponent implements OnInit {
         console.log(error);
         this._isLoading = false;
       }
-    )
+    );
   }
 
   get clients(): Client[] {
@@ -57,6 +59,10 @@ export class ClientsComponent implements OnInit {
       height: '500px',
       width: '600px',
     });
+  }
+
+  public onAddClient(): void {
+    this.router.navigate(['/add-client']);
   }
 
 }
