@@ -15,7 +15,7 @@ export class ClientsComponent implements OnInit {
   private _clients: Client[];
   private _isLoading: boolean = false;
 
-  dataSource: MatTableDataSource;
+  dataSource: MatTableDataSource<Client>;
 
   displayedColumns: string[] = ['name', 'surname', 'birthdate', 'email'];
 
