@@ -31,3 +31,7 @@
 .ts-shop-nav-bar-active {
     background-color: #f1efef;
 }
+
+.tshop-spacer {
+  flex: 1 1 auto;
+}

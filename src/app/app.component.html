@@ -1,8 +1,11 @@
 <div class="ts-shop-header">
-  <div class="ts-shop-header-title">
+  <mat-toolbar class="ts-shop-header-title">
     {{ title }}
-    <button style="float: right;" (click)="logout()">logout</button>
-  </div>
+    <span class="tshop-spacer"></span>
+    <button mat-button mat-raised-button (click)="logout()">
+      <mat-icon class="mat-icon">exit_to_app</mat-icon>
+    </button>
+  </mat-toolbar>
   <div *ngIf="isAuthenticated()" class="ts-shop-nav-bar">
     <a routerLink="/clients" routerLinkActive="ts-shop-nav-bar-active">Clients</a>
     <a routerLink="/products" routerLinkActive="ts-shop-nav-bar-active">Products</a>

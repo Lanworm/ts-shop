@@ -3,10 +3,19 @@
   <div>Loading</div>
 </div>
 <div [ngClass]="{ 'ts-shop-hidden': isLoading }">
-  <div class="ts-shop-filters">
-    <input type="text" placeholder="Name" [(ngModel)]="filters.name" (ngModelChange)="filterProducts()">
-    <input type="text" placeholder="Price" [(ngModel)]="filters.price" (ngModelChange)="filterProducts()">
-    <button type="button" class="ts-shop-btn-remove" [disabled]="isFiltersEmpty()" (click)="clearFilters()">&times;</button>
+  <div class="ts-shop-filters" fxLayout="row" fxLayoutGap="20px">
+    <mat-form-field>
+      <input matInput type="text" placeholder="Name" [(ngModel)]="filters.name" (ngModelChange)="filterProducts()">
+      <button mat-button *ngIf="filters.name" matSuffix mat-icon-button aria-label="Clear" (click)="filters.name = ''; filterProducts();">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput type="text" placeholder="Price" [(ngModel)]="filters.price" (ngModelChange)="filterProducts()">
+      <button mat-button *ngIf="filters.price" matSuffix mat-icon-button aria-label="Clear" (click)="filters.price = ''; filterProducts();">
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
   </div>
   <table class="ts-shop-base-table ts-shop-products-table">
     <thead class="ts-shop-base-table-header">

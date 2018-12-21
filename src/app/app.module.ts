@@ -12,8 +12,9 @@ import { LoginComponent } from './login/login.component';
 import {AuthGuard} from './auth.guard';
 import {ErrorInterceptor} from './error-interceptor';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatDialogModule, MatListModule} from '@angular/material';
+import {MatButtonModule, MatDialogModule, MatIconModule, MatInputModule, MatListModule, MatToolbarModule} from '@angular/material';
 import { ClientDetailsComponent } from './client-details/client-details.component';
+import {FlexLayoutModule} from '@angular/flex-layout';
 
 const appRoutes: Routes = [
   { path: 'clients', component: ClientsComponent, canActivate: [AuthGuard] },
@@ -38,7 +39,11 @@ const appRoutes: Routes = [
     MatListModule,
     MatDialogModule,
     BrowserAnimationsModule,
+    MatToolbarModule,
+    MatInputModule,
+    MatIconModule,
     MatButtonModule,
+    FlexLayoutModule,
     ReactiveFormsModule,
     RouterModule.forRoot(
       appRoutes,

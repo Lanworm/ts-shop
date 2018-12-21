@@ -61,7 +61,7 @@ export class ProductsComponent implements OnInit {
   }
 
   public isNotAvailable(product: Product): boolean {
-    if (product.category == ProductCategory.DEVICE) {
+    if (product.category === ProductCategory.DEVICE) {
       return this.isDeviceNotAvailable(product);
     }
     return false;
@@ -70,7 +70,7 @@ export class ProductsComponent implements OnInit {
   public setAvailabilityColour(product: Product): any {
     return {
       'background-color': this.isNotAvailable(product) ? '#e2cdcd' : 'inherit'
-    }
+    };
   }
 
 }
